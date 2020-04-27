@@ -1,0 +1,4 @@
+results/**
+!results/README.md
+!results/mapping_groups.csv
+!results/primitive_and_predefined_roles.csv
