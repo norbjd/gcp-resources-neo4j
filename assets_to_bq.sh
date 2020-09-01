@@ -16,7 +16,7 @@ ASSET_EXPORT_OPERATION_RESOURCE=$(gcloud asset export \
 	--snapshot-time=$SNAPSHOT_TIME \
 	--output-bigquery-force \
 	--content-type='resource' 2>&1 >/dev/null | \
-	grep -o "organizations/$ORGANIZATION_ID/operations/ExportAssets/[^/]*/[0-9]*")
+	grep -o "organizations/$ORGANIZATION_ID/operations/ExportAssets/[^/]*/[a-z0-9]*")
 
 echo "Operation $ASSET_EXPORT_OPERATION_RESOURCE launched!"
 
@@ -27,7 +27,7 @@ ASSET_EXPORT_OPERATION_IAM_POLICY=$(gcloud asset export \
 	--snapshot-time=$SNAPSHOT_TIME \
 	--output-bigquery-force \
 	--content-type='iam-policy' 2>&1 >/dev/null | \
-	grep -o "organizations/$ORGANIZATION_ID/operations/ExportAssets/[^/]*/[0-9]*")
+	grep -o "organizations/$ORGANIZATION_ID/operations/ExportAssets/[^/]*/[a-z0-9]*")
 
 echo "Operation $ASSET_EXPORT_OPERATION_IAM_POLICY launched!"
 
